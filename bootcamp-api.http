@@ -1,0 +1,26 @@
+###  Words Widget API
+###  Bootcamp functions to analyze the string that has been sent to them
+GET http://localhost:3009/api/Khanyie/word_game?sentence=Bootcamp functions tu. analyze the string that has been sent to . them
+
+###  Total Phone bill API
+###  Send a bill variable in the body containing the call & sms commands and then returns the total price for that string.
+POST http://localhost:3009/api/Khanyie/phonebill/total
+content-type: application/json
+
+{
+    "bill": "call,sms,call"
+}
+
+###  Total Phone bill API
+###  GET route /api/phonebill/prices that return the prices of a call and an sms prices in this format
+GET http://localhost:3009/api/Khanyie/phonebill/prices?totalPrice=400
+
+###  Total Phone bill API
+###  That can set the price of a call or sms the body contains the price & type - type can be call / sms In this format:
+POST http://localhost:3009/api/Khanyie/phonebill/price
+Content-Type: application/json
+
+{
+    "type": "sms",
+    "price": 2.85
+}

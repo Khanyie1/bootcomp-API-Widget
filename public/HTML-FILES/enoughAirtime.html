@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enough Airtime Widget</title>
+
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../index.js"></script>
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center" x-data="data">
+    <div class="bg-white p-8 rounded shadow-md max-w-sm w-full mx-auto">
+        <h2 class="text-2xl font-semibold mb-6 text-center">Enough Airtime Widget</h2>
+        
+        <div>
+            <label class="block mb-4">
+                <span class="text-gray-800 font-semibold">Type</span>
+                <input
+                    type="text"
+                    x-model="usage"
+                    class="form-input mt-1 block w-full"
+                    placeholder="Enter usage"
+                />
+            </label>
+
+            <label class="block mb-4">
+                <span class="text-gray-800 font-semibold">Amount:</span>
+                <input
+                    type="Enter available airtime"
+                    x-model="available"
+                    class="form-input mt-1 block w-full"
+                    placeholder="available amount"
+                />
+            </label>
+            
+            <button
+                @click="checkAirtime"
+                class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-4 rounded w-full"
+            >
+                Check Airtime
+            </button>
+            
+            <div id="resultContainer" class="mt-4 font-semibold" x-show="result2">
+                <p>Remaining Airtime: <span x-text="result2.result"></span></p>
+            </div>
+        </div>
+
+        <div class="flex justify-between mt-6">
+            <a href="../index.html" class="flex items-center bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Home
+            </a>
+        </div>
+    </div>
+</body>
+</html>

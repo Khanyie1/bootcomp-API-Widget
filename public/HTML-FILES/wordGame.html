@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Game Widget</title>
+
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="../index.js"></script>
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center" x-data="data">
+    <div class="bg-white p-8 rounded shadow-md max-w-sm w-full mx-auto">
+        <h2 class="text-2xl font-semibold mb-6 text-center">Word Game Widget</h2>
+        
+        <div>
+            <label class="block mb-4">
+                <span class="text-gray-800 font-semibold">Sentence to Analyze:</span>
+                <input
+                    type="text"
+                    x-model="sentence"
+                    class="form-input mt-1 block w-full"
+                    placeholder="Enter a sentence"
+                    max="1000"
+                />
+            </label>
+            
+            <button
+                @click="analyzeSentence"
+                class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-4 rounded w-full"
+            >
+                Show Result
+            </button>
+            
+            <div id="resultContainer" class="mt-4 font-semibold" x-show="sentenceResult">
+                <p>Longest Word: <span x-text="sentenceResult.longestWord"></span></p>
+                <p>Shortest Word: <span x-text="sentenceResult.shortestWord"></span></p>
+                <p>Sum of Words: <span x-text="sentenceResult.sum"></span></p>
+            </div>
+        </div>
+
+        <div class="flex justify-between mt-6">
+            <a href="../index.html" class="flex items-center bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Home
+            </a>
+            
+            <a href="./showPrices.html" class="flex items-center bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded">
+                Next
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
